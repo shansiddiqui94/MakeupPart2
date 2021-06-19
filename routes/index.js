@@ -4,26 +4,29 @@ const controllers = require("../controllers");
 
 router.get("/", (req, res) => res.send("This is root!"));
 
-router.post("/lambDishes", controllers.createLambDish);
+router.post("/lambDishes", controllers.createLambHaneeth);
 
-router.get("/lambDishes", controllers.getAllLambDish);
+router.get("/lambDishes", controllers.getAllLambHaneeth);
 
-router.get("/lambDishes/:id", controllers.getLambDishById);
+router.get("/lambDishes/:id", controllers.getLambHaneethById);
 
-router.post("/lambDishes/:id", controllers.updateLambDish);
+router.post("/lambDishes/:id", controllers.updateLambHaneeth);
 
-router.delete("/lambDishes/:id", controllers.deleteLambDish);
+router.delete("/lambDishes/:id", controllers.deleteLambHaneeth);
 
-router.get("/homeCountries/:id/lambDishes", controllers.getLambDishByCountry);
+router.get(
+  "/homeCountries/:id/lambDishes",
+  controllers.getLambHaneethByCountry
+);
 
-router.post("/homeCountries", controllers.createHomeCountry);
+router.post("/homeCountries", controllers.createcountry);
 
-router.get("/homeCountries", controllers.getAllHomeCountry);
+router.get("/homeCountries", controllers.getAllcountry);
 
-router.get("/homeCountries/:id", controllers.getHomeCountryById);
+router.get("/homeCountries/:id", controllers.getcountryById);
 
-router.post("/homeCountries/:id", controllers.updateHomeCountry);
+router.post("/homeCountries/:id", controllers.updatecountry);
 
-router.delete("/homeCountries/:id", controllers.deleteHomeCountry);
+router.delete("/homeCountries/:id", controllers.deletecountry);
 
 module.exports = router;

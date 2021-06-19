@@ -42,10 +42,10 @@ const updateLambHaneeth = async (req, res) => {
       { new: true },
       (err, dish) => {
         if (err) {
-          res.status(500).send(err)
+          res.status(500).send(err);
         }
         if (!dish) {
-          res.status(500).send("lamb dish not found")
+          res.status(500).send("lamb dish not found");
         }
         return res.status(200).json(dish);
       }
@@ -68,7 +68,6 @@ const deleteLambHaneeth = async (req, res) => {
   }
 };
 
-
 const getLambHaneethByCountry = async (req, res) => {
   try {
     const { id } = req.params;
@@ -77,8 +76,7 @@ const getLambHaneethByCountry = async (req, res) => {
   } catch (error) {
     return res.status(500).send(error.message);
   }
-}
-
+};
 
 const createcountry = async (req, res) => {
   try {
@@ -88,32 +86,29 @@ const createcountry = async (req, res) => {
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
-}
-
+};
 
 const getAllcountry = async (req, res) => {
   try {
-    const country = await country.find();
-    return res.status(200).json({ country });
+    const Location = await country.find();
+    return res.status(200).json({ Location });
   } catch (error) {
     return res.status(500).send({ error: error.message });
   }
 };
-
 
 const getcountryById = async (req, res) => {
   try {
     const { id } = req.params;
     const country = await country.findById(id);
     if (country) {
-      return res.status(200).json({ country });  
+      return res.status(200).json({ country });
     }
     return res.status(404).send("country not found");
   } catch (error) {
     return res.status(500).send(error.message);
   }
-}
-
+};
 
 const updatecountry = async (req, res) => {
   try {
@@ -124,10 +119,10 @@ const updatecountry = async (req, res) => {
       { new: true },
       (err, country) => {
         if (err) {
-          res.status(500).send(err)
+          res.status(500).send(err);
         }
         if (!country) {
-          res.status(500).send("country not found")
+          res.status(500).send("country not found");
         }
         return res.status(200).json(country);
       }
@@ -136,7 +131,6 @@ const updatecountry = async (req, res) => {
     return res.status(500).send(error.message);
   }
 };
-
 
 const deletecountry = async (req, res) => {
   try {
@@ -151,8 +145,6 @@ const deletecountry = async (req, res) => {
   }
 };
 
-
-
 module.exports = {
   createLambHaneeth,
   getAllLambHaneeth,
@@ -164,5 +156,5 @@ module.exports = {
   getAllcountry,
   getcountryById,
   updatecountry,
-  deletecountry
+  deletecountry,
 };
