@@ -4,17 +4,17 @@ const controllers = require("../controllers");
 
 router.get("/", (req, res) => res.send("This is root!"));
 
-router.post("/LambDish", controllers.createLambDish);
+router.post("/lambDishes", controllers.createLambDish);
 
-router.get("/LambDish", controllers.getAllLambDish);
+router.get("/lambDishes", controllers.getAllLambDish);
 
-router.get("/LambDish/:id", controllers.getLambDishById);
+router.get("/lambDishes/:id", controllers.getLambDishById);
 
-router.post("/LambDish/:id", controllers.updateLambDish);
+router.post("/lambDishes/:id", controllers.updateLambDish);
 
-router.delete("/LambDish/:id", controllers.deleteLambDish);
+router.delete("/lambDishes/:id", controllers.deleteLambDish);
 
-router.get("/homeCountries/:id/LambDish", controllers.getLambDishByCountry);
+router.get("/homeCountries/:id/lambDishes", controllers.getLambDishByCountry);
 
 router.post("/homeCountries", controllers.createHomeCountry);
 

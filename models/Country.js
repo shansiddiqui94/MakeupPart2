@@ -1,12 +1,10 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
-const Country = new Schema(
+const HomeCountry = new Schema(
   {
-    origin: { type: String, require: true },
+    name: { type: String, required: true },
+    country_flag: { type: String, required: true },
   },
-
   { timestamps: true }
 );
-
-module.exports = mongoose.model("country", Country);
+module.exports = mongoose.model("home_countries", HomeCountry);
